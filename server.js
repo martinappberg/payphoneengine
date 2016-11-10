@@ -2,8 +2,9 @@ var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
 
-var port = process.env.PORT || 8000;
+let server = require('http').Server(app);
 
+var port = process.env.PORT || 8000
 server.listen(port, function() {
     console.log("App is running on port " + port);
 });
