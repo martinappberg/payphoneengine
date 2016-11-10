@@ -3,7 +3,7 @@ var path = require("path");
 var bodyParser = require("body-parser");
 
 var app = express();
-app.use(express.static(__dirname + "/public"));
+//app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 
 var firebase = require("firebase");
@@ -17,7 +17,6 @@ var firebase = require("firebase");
   firebase.initializeApp(config);
 
   // Get a reference to the database service
-  var database = firebase.database();
 
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
@@ -54,7 +53,7 @@ app.post("/payments", function(req, res) {
     	});
     }
 }else {
-  	handleError(res, "Invalid MerchantID","Please provide a valid one", 400);
+  	handleError(res, "Invalid Merchant ID","Please provide a valid one", 400);
   }
 });
   
